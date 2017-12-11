@@ -1,0 +1,13 @@
+<form novalidate [formGroup]='form' (ngSubmit)='addMovie($e)'>
+  <input matInput formControlName='movie' name='movie' placeholder='Movie Title'>
+  <input matInput formControlName='director' name='director' placeholder='
+  Director'>
+  <input matInput formControlName='poster' name='poster' placeholder='URL of poster'>
+  <button>Add Movie!</button>
+</form>
+
+<div *ngFor='let movie of movies' [routerLink]="['/single', movie.id]" >
+  <h1>{{ movie.title }}</h1>
+  <h3>{{ movie.director }}</h3>
+  <img src='{{ movie.poster }}'>  
+</div>
