@@ -31,9 +31,9 @@ export class ListComponent implements OnInit {
       });
   }
 
-  addMovie() {
+  InsertMovie() {
     const add = (this.form.value);
-    this.service.addMovie(add)
+    this.service.insertMovie(add)
       .subscribe();
   }
 
