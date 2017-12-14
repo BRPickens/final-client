@@ -1,5 +1,5 @@
-<form novalidate [formGroup]='form' (ngSubmit)='addMovie($e)'>
-  <input matInput formControlName='movie' name='movie' placeholder='Movie Title'>
+<form novalidate [formGroup]='form' (ngSubmit)='insertMovie($e)'>
+  <input matInput formControlName='title' name='title' placeholder='Movie Title'>
   <input matInput formControlName='director' name='director' placeholder='
   Director'>
   <input matInput formControlName='poster' name='poster' placeholder='URL of poster'>

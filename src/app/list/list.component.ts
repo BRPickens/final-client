@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
     private service: MovieService
   ) {
     this.form = this.fb.group({
-      movie: [''],
+      title: [''],
       director: [''],
       poster: ['']
     });
@@ -28,13 +28,18 @@ export class ListComponent implements OnInit {
     this.service.getMovies()
       .subscribe((movies) => {
         this.movies = movies;
+        console.log(movies);
       });
   }
 
-  InsertMovie() {
+  insertMovie() {
     const add = (this.form.value);
+    console.log(add);
     this.service.insertMovie(add)
-      .subscribe();
+      .subscribe(() => {
+        console.log(add);
+      })
+      window.location.reload()
   }
 
 }
